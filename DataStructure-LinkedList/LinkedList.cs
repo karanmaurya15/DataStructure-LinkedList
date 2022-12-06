@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +27,24 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
+        public Node InsertElement(int data)
+        {
+            int position = 2;
+            int count = 1;
+
+            Node neweNode = new Node(data);
+            Node prev = null;
+            Node current = this.head;           
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            neweNode.next = prev.next;
+            prev.next = neweNode;
+            return this.head;
+        }
         public void Display()
         {
             Node temp = this.head;
@@ -36,7 +53,7 @@ namespace DataStructure_LinkedList
                 Console.WriteLine("LinkedList is empty");
                 return;
             }
-            Console.Write("\nLinked List :- ");
+            Console.Write("Linked List :- ");
             while (temp != null)
             {
                 Console.Write(temp.data + " ");
