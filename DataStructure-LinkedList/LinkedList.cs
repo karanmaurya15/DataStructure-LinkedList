@@ -72,7 +72,22 @@ namespace DataStructure_LinkedList
             NewNode.next = null;
             Console.WriteLine("\nRemoved Last Node");
         }
-    
+        public int Search(int value)
+        {
+            Node node = this.head;
+            int count = 1;
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    Console.WriteLine("\nThe " + value + " is at Node : " + count);
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
         public void Display()
         {
             Node temp = this.head;
