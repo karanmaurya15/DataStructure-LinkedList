@@ -45,15 +45,34 @@ namespace DataStructure_LinkedList
             prev.next = neweNode;
             return this.head;
         }
-        public Node DeleteFirstNode()
+        public void PopFirstNode()
         {
             if (this.head == null)
             {
-                return null;
+                Console.WriteLine("\nList is Empty");
             }
             this.head = this.head.next;
-            return this.head;
+            Console.WriteLine("\nRemoved first node");
         }
+        public void PopLastNode()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("\nLinked List Empty");
+            }
+            if (head.next == null)
+            {
+                Console.WriteLine("\nLinked List Empty");
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            Console.WriteLine("\nRemoved Last Node");
+        }
+    
         public void Display()
         {
             Node temp = this.head;
@@ -62,7 +81,7 @@ namespace DataStructure_LinkedList
                 Console.WriteLine("LinkedList is empty");
                 return;
             }
-            Console.Write("Linked List :- ");
+            Console.Write("\nLinked List :- ");
             while (temp != null)
             {
                 Console.Write(temp.data + " ");

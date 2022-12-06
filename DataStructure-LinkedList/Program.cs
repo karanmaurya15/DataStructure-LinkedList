@@ -9,11 +9,10 @@
             linkedList.Add(56);
             linkedList.Add(30);
             linkedList.Add(70);
-          
-            linkedList.DeleteFirstNode();
-        
-            Console.WriteLine("\nAfter Delete element -> ");
+            linkedList.PopLastNode();
             linkedList.Display();
+
+            Console.ReadLine();
         }
     }
 }
