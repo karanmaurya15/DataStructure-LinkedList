@@ -5,11 +5,11 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Wellcome to Data Structure Program\n");
-            LinkedList objLinkedList = new LinkedList();
-            objLinkedList.Add(56);
-            objLinkedList.Add(30);
-            objLinkedList.Add(70);
-            objLinkedList.Display();
+            LinkedList linkedList = new LinkedList();
+            linkedList.Add(70);
+            linkedList.Add(30);
+            linkedList.Add(56);
+            linkedList.Display();
             
         }
     }
