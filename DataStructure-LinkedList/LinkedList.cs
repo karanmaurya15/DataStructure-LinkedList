@@ -9,6 +9,7 @@ namespace DataStructure_LinkedList
     internal class LinkedList
     {
         public Node head;
+        public int count = 1;
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -27,24 +28,7 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-        public Node InsertElement(int data)
-        {
-            int position = 2;
-            int count = 1;
-
-            Node neweNode = new Node(data);
-            Node prev = null;
-            Node current = this.head;           
-            while (current != null && count < position)
-            {
-                prev = current;
-                current = current.next;
-                count++;
-            }
-            neweNode.next = prev.next;
-            prev.next = neweNode;
-            return this.head;
-        }
+       
         public void PopFirstNode()
         {
             if (this.head == null)
@@ -75,7 +59,7 @@ namespace DataStructure_LinkedList
         public int Search(int value)
         {
             Node node = this.head;
-            int count = 1;
+           // int count = 1;
             while (node != null)
             {
                 if (node.data == value)
@@ -87,6 +71,25 @@ namespace DataStructure_LinkedList
                 count++;
             }
             return count;
+        }
+        public void InsertElement(int data)
+        {
+            int position;
+            position = count + 1;
+            // int count = 1;
+
+            Node newNode = new Node(data);
+            Node prev = null;
+            Node current = this.head;
+            while (current != null && count <= position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newNode.next = prev.next;
+            prev.next = newNode;
+            Console.WriteLine("\n{0} inserted at position {1}", newNode.data, position);
         }
         public void Display()
         {
