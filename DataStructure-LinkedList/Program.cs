@@ -9,13 +9,13 @@
             LinkedList linkedList = new LinkedList();
             linkedList.Add(56);
             linkedList.Add(30);
+            linkedList.Add(40);
             linkedList.Add(70);
             linkedList.Display();
-            Console.WriteLine();
-            linkedList.Search(30);
-            linkedList.InsertElement(40);
-           // Console.Write("\nNew ");
-            linkedList.Display();
+           
+            linkedList.Search(40);
+            linkedList.DeleteElement();
+            linkedList.Size();
             Console.ReadLine();
         }
     }

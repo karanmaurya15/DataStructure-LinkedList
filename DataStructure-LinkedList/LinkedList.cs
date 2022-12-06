@@ -28,7 +28,6 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-       
         public void PopFirstNode()
         {
             if (this.head == null)
@@ -55,23 +54,7 @@ namespace DataStructure_LinkedList
             }
             NewNode.next = null;
             Console.WriteLine("\nRemoved Last Node");
-        }
-        public int Search(int value)
-        {
-            Node node = this.head;
-         
-            while (node != null)
-            {
-                if (node.data == value)
-                {
-                    Console.WriteLine("\nThe " + value + " is at Node : " + count);
-                    return count;
-                }
-                node = node.next;
-                count++;
-            }
-            return count;
-        }
+        }     
         public void InsertElement(int data)
         {
             int position;
@@ -89,6 +72,52 @@ namespace DataStructure_LinkedList
             newNode.next = prev.next;
             prev.next = newNode;
             Console.WriteLine("\n{0} inserted at position {1}", newNode.data, position);
+        }
+        public int Search(int value)
+        {
+            Node node = this.head;
+
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    Console.WriteLine("\n\nThe " + value + " is at Node : " + count);
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
+        public void DeleteElement()
+        {
+            int position = count;
+            Node temp = this.head;
+  
+            for (int i = 1; temp != null && i < position-1; i++)
+            {
+                temp = temp.next;
+            }
+            Node next = temp.next.next;
+            temp.next = next;
+            Console.WriteLine("\nValue from position {0} is deleted. ", position);
+        }
+        internal void Size()
+        {
+            Node temp = this.head;
+            int count = 0;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            Console.Write("\nFinal Linked List is : ");
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("\nSize of LinkedList is :-" + " " + count);
         }
         public void Display()
         {
