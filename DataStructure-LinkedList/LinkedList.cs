@@ -45,6 +45,15 @@ namespace DataStructure_LinkedList
             prev.next = neweNode;
             return this.head;
         }
+        public Node DeleteFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
+        }
         public void Display()
         {
             Node temp = this.head;
