@@ -10,7 +10,6 @@ namespace DataStructure_LinkedList
     internal class LinkedList
     {
         public Node head;
-
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -29,7 +28,6 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-
         public void Display()
         {
             Node temp = this.head;
