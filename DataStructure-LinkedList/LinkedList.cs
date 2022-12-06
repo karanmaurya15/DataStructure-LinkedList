@@ -59,7 +59,7 @@ namespace DataStructure_LinkedList
         public int Search(int value)
         {
             Node node = this.head;
-           // int count = 1;
+         
             while (node != null)
             {
                 if (node.data == value)
@@ -76,8 +76,7 @@ namespace DataStructure_LinkedList
         {
             int position;
             position = count + 1;
-            // int count = 1;
-
+            
             Node newNode = new Node(data);
             Node prev = null;
             Node current = this.head;
