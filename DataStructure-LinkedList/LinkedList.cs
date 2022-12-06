@@ -28,7 +28,6 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-       
         public void PopFirstNode()
         {
             if (this.head == null)
@@ -59,12 +58,12 @@ namespace DataStructure_LinkedList
         public int Search(int value)
         {
             Node node = this.head;
-           // int count = 1;
+         
             while (node != null)
             {
                 if (node.data == value)
                 {
-                    Console.WriteLine("\nThe " + value + " is at Node : " + count);
+                    Console.WriteLine("\n\nThe " + value + " is at Node : " + count);
                     return count;
                 }
                 node = node.next;
@@ -76,8 +75,7 @@ namespace DataStructure_LinkedList
         {
             int position;
             position = count + 1;
-            // int count = 1;
-
+            
             Node newNode = new Node(data);
             Node prev = null;
             Node current = this.head;
