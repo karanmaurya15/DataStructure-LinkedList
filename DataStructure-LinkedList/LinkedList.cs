@@ -91,7 +91,7 @@ namespace DataStructure_LinkedList
         }
         public void DeleteElement()
         {
-            int position = count;
+            int position = count; //count used from pervious mathod
             Node temp = this.head;
   
             for (int i = 1; temp != null && i < position-1; i++)
@@ -119,6 +119,34 @@ namespace DataStructure_LinkedList
             }
             Console.WriteLine("\nSize of LinkedList is :-" + " " + count);
         }
+        internal void SortList()
+        {
+            if (head == null)
+                return;
+            else
+            {
+                int store;
+                Node temp = head;
+                Node temp1 = null;
+                while (temp != null)
+                {
+                    temp1 = temp.next;
+                    while (temp1 != null)
+                    
+                    {
+                        if (temp.data.CompareTo(temp1.data) > 0)
+                        {
+                            store = temp.data;
+                            temp.data = temp1.data;
+                            temp1.data = store;
+                        }
+                        temp1 = temp1.next;
+                    }
+                    temp = temp.next;
+                }
+            }
+
+        }
         public void Display()
         {
             Node temp = this.head;
@@ -127,7 +155,7 @@ namespace DataStructure_LinkedList
                 Console.WriteLine("LinkedList is empty");
                 return;
             }
-            Console.Write("\nLinked List :- ");
+            Console.Write("Linked List :- ");
             while (temp != null)
             {
                 Console.Write(temp.data + " ");

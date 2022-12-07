@@ -11,11 +11,12 @@
             linkedList.Add(30);
             linkedList.Add(40);
             linkedList.Add(70);
+            Console.WriteLine("\n~~~~~~~~~~Linked List Before Sorting~~~~~~~~~");
             linkedList.Display();
-           
-            linkedList.Search(40);
-            linkedList.DeleteElement();
-            linkedList.Size();
+
+            Console.WriteLine("\n\n~~~~~~~~~~~Linked List After Sorting~~~~~~~~~");        
+            linkedList.SortList();
+            linkedList.Display();
             Console.ReadLine();
         }
     }
